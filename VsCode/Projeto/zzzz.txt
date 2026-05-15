@@ -1,0 +1,35 @@
+1. Biblioteca Pessoal | Intermediário
+Requisitos obrigatórios
+• Cadastrar livro (título, autor, ano, gênero,
+prioridade)
+• Listar todos os livros com status atual
+• Fila de livros 'a ler' — FIFO: mais antigo lido
+primeiro
+• Pilha de livros concluídos — LIFO: último
+lido aparece no topo
+• Atualizar status: A Ler > Lendo > Concluído
+• Buscar livro por título ou autor
+
+Funcionalidades bônus
+• Filtrar livros por gênero
+• Contar total de livros por status
+Dica
+Use a tupla status = ('A Ler', 'Lendo', 'Concluído') e
+indexe com status[0], status[1], status[2] — igual
+ao modelo da aula
+=============================================================
+=============================================================
+3. Requisitos comuns a todos os temas
+Independentemente do tema escolhido, todo projeto deve ter:
+• Pelo menos 4 arquivos .py com responsabilidades separadas
+• Lista para registro global de todos os itens
+• Fila (FIFO) para itens pendentes — novos entram no final, processados saem pelo início
+Programação de Computadores Profa. Dra. Andrea Ono Sakai
+Proposta de Projeto Final | 2026 3
+• Pilha (LIFO) para histórico de concluídos — exibido do mais recente ao mais antigo com
+reversed()
+• Dicionário encapsulando todos os atributos de cada item
+• Tupla para catégorias fixas (status, prioridades)
+• Menu com while True e opção de saída com break
+• Tratamento de erro com try/except para pelo menos uma entrada do usuário
+• Funções comentadas com nomes descritivos
