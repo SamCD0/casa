@@ -1,6 +1,6 @@
 from dados import livros, sendo_lidos, lidos, para_ler, prioridade, status
 from utils import titulo
-from tarefas import adicionar_livro, listar_livros, atualizar_status
+from tarefas import adicionar_livro, listar_livros, atualizar_status, ainda_ler
 
 def menu():
     titulo("Sua biblioteca virtual")
@@ -23,3 +23,7 @@ while True:
     elif escolha == "3":
 
         atualizar_status()
+    elif escolha == "4":
+
+        ainda_ler()
+        

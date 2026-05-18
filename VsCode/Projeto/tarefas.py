@@ -3,8 +3,6 @@ from utils import titulo
 
 def adicionar_livro():
     titulo ("Adicionar Tarefa")
-
-    
     titulos = input("Titulo do livro:")
     autor = input("Autor do livro:")
     ano = input("Ano de publicação:")
@@ -54,13 +52,13 @@ def atualizar_status():
         return
     
     try:
-        id_tarefa = int(input("Digite o ID da tarefa: "))
+        id_livro = int(input("Digite o ID da tarefa: "))
     except ValueError:
         print("Digite um número válido.")
         return
 
-    for livros in tarefas:
-        if livros["id"] == id_tarefa:
+    for livro in livros:
+        if livro["id"] == id_livro:
             print("\nEscolha o novo status:")
             print("1 - Pendente")
             print("2 - Em andamento")
@@ -68,18 +66,27 @@ def atualizar_status():
             escolha = input("Opção: ")
 
             if escolha == "1":
-                    livros["status"] = status[0]
-                    if livros not in para_ler:
-                        para_ler.append(tarefa)
+                    livro["status"] = status[0]
+                    if livro not in para_ler:
+                        para_ler.append(livro)
             elif escolha == "2":
-                    livros["status"] = status[1]
+                    livro["status"] = status[1]
             elif escolha == "3":
-                    livros["status"] = status[2]
-                    lidos.append(tarefa)   # empilha!
-            if livros in para_ler:
-                    livros.remove(tarefa)  # sai da fila
+                    livro["status"] = status[2]
+                    livro.append(lidos)   
+            if livro in para_ler:
+                    para_ler.append(livro)  
 
             print("Status atualizado com sucesso!")
             return
 
     print("Tarefa não encontrada.")
+
+def ainda_ler():
+    titulo("Livros ainda não iniciados")
+    if para_ler != status[0]:
+        print("Nenhum livro na fila.")
+        return
+
+    for i, livro in enumerate(para_ler, start=1):
+        print(f"{i}. {livros}")
